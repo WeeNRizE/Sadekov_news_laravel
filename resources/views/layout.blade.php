@@ -15,6 +15,7 @@
             <nav>
                 <a href="{{ route ('about') }}">О нас</a>
                 <a href="{{ route ('contacts') }}">Контакты</a>
+                <a href="/articles/show">Статьи</a>
                 <a href="/signup">Регистрация</a>
                 <a href="auth/login">Вход</a>
             </nav>
