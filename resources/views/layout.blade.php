@@ -12,13 +12,18 @@
     <header>
         <div class="header_container">
             <a class="logo_a" href="{{ route ('home') }}"><img class="logo" src="{{ asset('images/logo.png') }}" alt="Логотип"></a>
-            <nav>
-                <a href="{{ route ('about') }}">О нас</a>
-                <a href="{{ route ('contacts') }}">Контакты</a>
-                <a href="/articles/show">Статьи</a>
-                <a href="/signup">Регистрация</a>
-                <a href="auth/login">Вход</a>
-            </nav>
+            <div class="nav_items">
+                <nav>
+                    <a href="{{ route ('about') }}">О нас</a>
+                    <a href="{{ route ('contacts') }}">Контакты</a>
+                    <a href="/signup">Регистрация</a>
+                    <a href="auth/login">Вход</a>
+                </nav>
+                <nav>
+                    <a href="/article">Статьи</a>
+                    <a href="/article/create">Создать статью</a>
+                </nav>
+            </div>
         </div>
     </header>
 
