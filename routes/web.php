@@ -15,12 +15,15 @@ use App\Http\Controllers\ArticleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('article', ArticleController::class);
+Route::resource('article', ArticleController::class)->middleware('auth:sanctum');
 
 #Route::get('/articles/show', [ArticleController::class, 'index']);
 
-Route::get('/signup', [AuthController::class, 'create']);
-Route::post('/auth/login', [AuthController::class, 'registration']);
+Route::get('/auth/create', [AuthController::class, 'create']);
+Route::post('/auth/registration', [AuthController::class, 'registration']);
+Route::get('/auth/login', [AuthController::class, 'login'])->name('login');
+Route::post('/auth/signIn', [AuthController::class, 'customLogin']);
+Route::get('/auth/logout', [AuthController::class, 'logout']);
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 Route::get('/galery/{full_image}', [MainController::class, 'show']);
