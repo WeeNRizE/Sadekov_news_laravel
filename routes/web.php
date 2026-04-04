@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,14 @@ use App\Http\Controllers\ArticleController;
 |
 */
 Route::resource('article', ArticleController::class)->middleware('auth:sanctum');
+
+Route::post('/article/{article}/comments', [CommentController::class, 'store'])
+    ->middleware('auth:sanctum')
+    ->name('comments.store');
+
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
+    ->middleware('auth:sanctum')
+    ->name('comments.destroy');
 
 #Route::get('/articles/show', [ArticleController::class, 'index']);
 

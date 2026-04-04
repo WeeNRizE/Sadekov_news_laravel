@@ -26,7 +26,9 @@
                 </nav>
                 <nav>
                     <a href="/article">Статьи</a>
-                    <a href="/article/create">Создать статью</a>
+                    @can('article')
+                        <a href="/article/create">Создать статью</a>
+                    @endcan
                 </nav>
             </div>
         </div>
