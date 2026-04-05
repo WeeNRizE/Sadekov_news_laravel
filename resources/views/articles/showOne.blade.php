@@ -57,20 +57,12 @@
                                     <p class="comment_author">{{ $comment->user->name }}</p>
                                     <p class="comment_date">{{ $comment->created_at->format('d.m.Y H:i') }}</p>
                                 </div>
-
-                                @can('article')
-                                    <form action="{{ route('comments.destroy', ['comment' => $comment->id]) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="article_but">Удалить</button>
-                                    </form>
-                                @endcan
                             </div>
 
                             <p class="comment_text">{{ $comment->text }}</p>
                         </article>
                     @empty
-                        <p class="comments_empty">Пока комментариев нет. Будьте первым.</p>
+                        <p class="comments_empty">Пока нет комментариев, прошедших модерацию.</p>
                     @endforelse
                 </div>
             </div>

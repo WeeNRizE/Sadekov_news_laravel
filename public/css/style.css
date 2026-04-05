@@ -768,3 +768,28 @@ footer {
     border: 1px solid #f0caca;
     color: #8a1f1f;
 }
+
+/*MODERATION*/
+
+.moderation_article {
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: #4b4b4b;
+}
+
+.moderation_article a {
+    color: #111111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.moderation_article a:hover {
+    text-decoration: underline;
+}
+
+.moderation_actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}

@@ -22,6 +22,14 @@ Route::post('/article/{article}/comments', [CommentController::class, 'store'])
     ->middleware('auth:sanctum')
     ->name('comments.store');
 
+Route::get('/comments/moderation', [CommentController::class, 'moderation'])
+    ->middleware('auth:sanctum')
+    ->name('comments.moderation');
+
+Route::patch('/comments/{comment}/approve', [CommentController::class, 'approve'])
+    ->middleware('auth:sanctum')
+    ->name('comments.approve');
+
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
     ->middleware('auth:sanctum')
     ->name('comments.destroy');

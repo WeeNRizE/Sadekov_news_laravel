@@ -30,6 +30,11 @@
                         <a href="/article/create">Создать статью</a>
                     @endcan
                 </nav>
+                <nav>
+                    @can('article')
+                        <a href="{{ route('comments.moderation') }}">Модерация комментариев</a>
+                    @endcan
+                </nav>
             </div>
         </div>
     </header>
